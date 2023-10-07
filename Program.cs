@@ -53,6 +53,7 @@ namespace SLab2
 
         static void DefinedObjectJson()
         {
+            Console.Clear();
             string reader = "file.json";
             var json = File.ReadAllText(reader);
             List<Person> persons = JsonConvert.DeserializeObject<List<Person>>(json);

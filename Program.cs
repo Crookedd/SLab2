@@ -16,10 +16,10 @@ namespace SLab2
              double diameter = Convert.ToDouble(Console.ReadLine());
              Console.WriteLine("Введите значение массы кг: ");
              double mass = Convert.ToDouble(Console.ReadLine());
-            double diameterN = diameter / 1000;
+             double diameterN = diameter / 1000;
 
-            double area = Math.PI * Math.Pow(diameterN/ 2, 2);  
-            double thickness = mass / (area * density);
+             double area = Math.PI * Math.Pow(diameterN/ 2, 2);  
+             double thickness = mass / (area * density);
              Console.WriteLine($"толщина диска: {thickness} м");
         }
     }
@@ -56,6 +56,11 @@ namespace SLab2
             string reader = "file.json";
             var json = File.ReadAllText(reader);
             List<Person> persons = JsonConvert.DeserializeObject<List<Person>>(json);
+            Console.WriteLine("Список людей:");
+            foreach (var person in persons)
+            {
+                Console.WriteLine("Имя: " + person.Name + ", Фамилия: " + person.Lastname + ", Пол: " + person.Gender + ", Рост: " + person.Height);
+            }
 
             int maleCount = 0;
             int femaleCount = 0;
